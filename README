@@ -1,0 +1,49 @@
+dukedissertation.cls   
+Version 0.40, October 27 2008
+
+This document class is intended to pass the duke university format check for
+Ph.D dissertations and masters theses.  It is built on a modern version of the LaTeX 2e
+report.cls with add-ins from the old dukethesis.cls.  
+
+The dissertation.tex file is a working model for a dissertation.  
+See the comments there for more instruction, as well as in abstract.tex,
+listofabbr.tex, acknowledgements.tex, and biography.tex.
+
+Class documentation appears in the first chapter (guide-notes.tex) of the
+sample dissertation and in the top comment of dukedissertation.cls.  
+
+Before you begin, try to build the included example dissertation.  Run
+  $ pdflatex dissertation.tex
+  $ pdflatex dissertation.tex
+  $ bibtex dissertation
+  $ pdflatex dissertation.tex
+  $ pdflatex dissertation.tex
+If this doesn't work, likely culprits are (a) an old, pre-pdftex TeX
+distribution,  (b) you're missing some packages, like 'graphicx',
+(c) you're missing some optional packages in dissertation.tex:
+'hyperref' 'amsmath', 'amssymb', 'amsfonts', or 'amsthm'.  A quick-fix is to
+download the required package from http://www.ctan.org/ and jam everything
+in the directory of dissertation.tex.
+
+RELEASE VERSION
+Please send bugs, comments, and suggestions to mgratton@math.duke.edu
+
+KNOWN BUGS
+* There's a known bug that shows up in the List of Abbreviations spacing.  A
+  work-around is discussed in listofabbr.tex
+* Failure to include any sort of abstract (even a placeholder) will result
+  in strange behavior.
+
+SPACING
+This class uses \raggedbottom, so that excess space on a page is
+grouped at the bottom.  This is the easiest thing to make everything look
+nice.  If you want to work harder, try putting \flushbottom just after
+\begin{document}.  Check dissertation.log for "underfull vbox" errors.
+Those pages will have lots of extra vertical space inserted so that the
+bottom line on each page is at the same height.  To fix the bad spacing, you
+need to break-up large display environments and figures so that TeX has more
+flexibility in formatting pages.  If that sounds scary to you, just live
+with \raggedbottom.
+
+
+THE ORIGINAL DOCUMENT HAS BEEN MODIFIED BY NEMANJA DJURIC (IN NOVEMBER 2013) IN ORDER TO PASS THE CHECK FOR TEMPLE UNIVERSITY PHD THESIS. BEST OF LUCK!

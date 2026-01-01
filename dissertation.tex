@@ -1,0 +1,298 @@
+\documentclass[]{templedissertation}
+
+
+% Useful packages for dissertation writing:
+\usepackage{amsmath, amssymb, amsfonts, amsthm}
+\usepackage{natbib}
+\usepackage{color}
+\usepackage{bm}
+\usepackage{mathabx}
+\usepackage{multirow}
+\usepackage{setspace}
+% \usepackage{cite}  % If you include this, hyperlink cites will
+                     % break.  It's nice to use this package if your bibstyle
+							% sorts entries by order-of-use, rather than
+							% alphabetically (as plain does).
+
+\usepackage[table]{xcolor}
+\usepackage{booktabs}
+\usepackage{subfig, float, graphicx, epsfig, epstopdf, balance}
+% \usepackage{algorithm}
+\usepackage[boxruled, noend, vlined, linesnumbered]{algorithm2e}
+%\usepackage[tight,footnotesize]{subfigure}
+\usepackage[inline]{enumitem}
+%\usepackage{algpseudocode}
+%\usepackage{algorithmicx}
+\usepackage[export]{adjustbox}
+\usepackage{url}
+\usepackage{wrapfig}
+% \usepackage[linktoc=none]{hyperref}
+
+\usepackage{times}
+
+% ========================= Additional packages =========================
+%\usepackage{algpseudocode}
+\usepackage[all]{nowidow}
+\usepackage[noend]{algpseudocode}
+% \usepackage{fullpage}
+\usepackage{pifont}
+\usepackage{rotating}
+\usepackage{hhline}
+%\usepackage{subcaption}
+%\captionsetup{compatibility=false}
+\usepackage[utf8]{inputenc}
+\usepackage{tabularx}
+\usepackage{diagbox}
+\usepackage{etoolbox}
+%\usepackage{cite}
+%\usepackage[table,xcdraw]{xcolor}
+\usepackage{colortbl}
+\usepackage{varwidth}
+%\usepackage{soul}
+\usepackage{vcell}
+
+\usepackage{array}
+\usepackage{makecell}
+\renewcommand\theadfont{\bfseries}
+\renewcommand\cellalign{cc}
+
+\usepackage{cellspace}
+\setlength\cellspacetoplimit{4pt}
+\setlength\cellspacebottomlimit{4pt}
+
+\usepackage{indentfirst}
+\usepackage{filecontents}
+
+\usepackage{titlesec}
+\usepackage{float}    % For float positioning
+\usepackage[normalem]{ulem}
+\usepackage[labelfont=bf,textfont=md]{caption}\captionsetup[table]{skip=10pt}
+\usepackage{pgfplots}
+\usepackage{adjustbox}
+\usetikzlibrary{fit, positioning, backgrounds, shapes, arrows, decorations, shadows.blur, shapes.geometric}
+\usepackage[hidelinks, citecolor=black, linkcolor=black]{hyperref}
+
+\pdfstringdefDisableCommands{%
+  \def\\{ }%
+  \def\newline{ }%
+}
+
+% \usepackage[style=apa,backend=biber]{biblatex}
+% \addbibresource{References.bib} %Imports bibliography file
+% Redefine \caption to change "FIGURE" to "Figure"
+\DeclareCaptionLabelFormat{smallcaps}{Figure #2}
+\captionsetup[figure]{labelformat=smallcaps}
+\captionsetup[figure]{labelsep=period}
+\captionsetup[figure]{position=below}
+\captionsetup[table]{labelsep=period}
+
+% Set margins
+%\usepackage[left=1.5in,right=1in,top=1in,bottom=1in]{geometry}
+%\usepackage[left=1in,right=1in,top=1in,bottom=1in,%
+%            footskip=.25in]{geometry}
+%\usepackage[left=1.5in,right=1.0in,top=1.0in,bottom=1.0in,
+%            includefoot,heightrounded]{geometry}
+% heightrounded is better, BUT it could slightly modify the top or bottom margin!!!
+\usepackage[left=1.5in,right=1.0in,top=1.0in,bottom=1.0in,
+            includefoot]{geometry}
+\usepackage{pdfpages}
+% Settings for appendices
+\usepackage{appendix}
+\renewcommand\appendixpagename{APPENDICES}
+\renewcommand\appendixtocname{APPENDICES}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator{\Tr}{Tr}
+
+\newtheorem{theorem}{Theorem}
+
+\newcommand*\samethanks[1][\value{footnote}]{\footnotemark[#1]}
+
+\algnewcommand\algorithmicinput{\textbf{Input:}}
+\algnewcommand\INPUT{\item[\algorithmicinput]}
+
+\algnewcommand\algorithmicmyprocedure{\textbf{Procedure:}}
+\algnewcommand\MYPROCEDURE{\item[\algorithmicmyprocedure]}
+
+\algnewcommand\algorithmicoutput{\textbf{Output:}}
+\algnewcommand\OUTPUT{\item[\algorithmicoutput]}
+
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+
+\definecolor{greyclr}{RGB}{213,229,255}
+\definecolor{lightgray}{gray}{0.7}
+
+\definecolor{lightblue}{RGB}{221,235,247}
+\definecolor{darkblue}{RGB}{155,194,230}
+\definecolor{darkerblue}{RGB}{92,140,206}
+
+% Personal commands and abbreviations.
+\newcommand{\adjr}{R_{\text{\scriptsize Adj}}^2}
+\newcommand\Tstrut{\rule{0pt}{2.6ex}}         % = `top' strut
+\newcommand\Bstrut{\rule[-0.9ex]{0pt}{0pt}}   % = `bottom' strut
+\definecolor{bblue5}{HTML}{185d8b}
+\definecolor{bblue4}{HTML}{2280bf}
+\definecolor{bblue3}{HTML}{3498db}
+\definecolor{bblue2}{HTML}{63b0e3}
+\definecolor{rred}{rgb}{1,.5,.6}
+\definecolor{oorange}{rgb}{1,.6,.4}
+\definecolor{ppurple1}{HTML}{a3b18a}
+\definecolor{ppurple2}{HTML}{588157}
+\definecolor{color0}{rgb}{1,.6,.4}
+\definecolor{color1}{rgb}{.5,.6,1}
+\definecolor{color2}{rgb}{.9,.4,.4}
+\setlength\algomargin{1.5em}
+%Graphics Path to find your pictures
+\graphicspath{{./Figures/}}
+
+%-----------------------------------------------------------------------------%
+% PREAMBLE 
+%-----------------------------------------------------------------------------%
+\author{John Doe}
+\title{\uppercase{Pushing limits of the science
+}}
+
+\newcommand{\departmentInternal}{Computer \& Information Sciences}
+\newcommand{\departmentBiology}{Biology}
+\newcommand{\universityUCR}{University of California-Riverside}%{Example advisory committee member from another university}
+\newcommand{\departmentPH}{Health Services Administration and Policy} 
+\date{December 2025} % Month and Date, e.g., January 2013
+
+
+\supervisor{Jane Doe, Advisory Chair, \departmentInternal}
+
+% Copyright text.  If undefined, default is 'All rights reserved'
+% (Example sets the text to a hyperlinked Creative Commons Licence)
+\copyrighttext
+
+% Committee Members other than supervisor.  No more than five beyond the
+% supervisor allowed.
+
+% IMPORTANT: Later on replace the front matter that the graduate school will provide you, for some reason they don't like this.
+\member{Genius 1, \departmentInternal}
+\member{Genius 2, \departmentBiology}
+\member{Genius 3, \universityUCR}
+\member{Genius 4, External Reader, \departmentPH}
+%-----------------------------------------------------------------------------%
+
+
+%-----------------------------------------------------------------------------%
+% HYPERREF: plain black hypertext references for ref's and cite's.
+%-----------------------------------------------------------------------------%
+% \usepackage[pdftex, pdfusetitle, plainpages=false, 
+% 				letterpaper, bookmarks, bookmarksnumbered,
+% 				colorlinks, linkcolor=black, citecolor=black,
+% 	         filecolor=black, urlcolor=black]
+% 				{hyperref}
+\setcounter{secnumdepth}{4}
+
+\titleformat{\section}
+  {\normalfont\normalsize\bfseries} % Formatting for the section title
+  {\thesection} % Numbering
+  {1em} % Spacing between number and title
+  {} %
+
+\titleformat{\subsection}
+  {\normalfont\normalsize\bfseries\itshape} % Formatting for the section title
+  {\thesubsection} % Numbering
+  {1em} % Spacing between number and title
+  {} %
+\titleformat{\subsubsection}[runin]
+  {\normalfont\normalsize\bfseries} % Formatting for the subsubsection title
+  {\thesubsubsection} % Numbering
+  {1em} % Spacing between number and title
+  {} % Formatting for the title
+\titlespacing*{\subsubsection}
+  {1.5em} % Left margin
+  {3.25ex plus 1ex minus .2ex} % Space before
+  {1.5ex plus .2ex} % Space after 
+\pgfplotsset{compat=1.18} 
+
+
+\begin{document}
+%-----------------------------------------------------------------------------%
+% TITLE PAGE -- provides UMI abstract title page & copyright if appropriate
+%-----------------------------------------------------------------------------%
+\maketitle
+%-----------------------------------------------------------------------------%
+% ABSTRACT -- included file should start with '\abstract'.
+%-----------------------------------------------------------------------------%
+\include{./Abstract/abstract}
+%-----------------------------------------------------------------------------%
+% DEDICATION -- OPTIONAL.  Put the text inside the braces.
+%               (Long 'dedications' probably belong in the acknowledgements)
+%-----------------------------------------------------------------------------%
+\addcontentsline{toc}{chapter}{\dedname}
+\dedication{
+A one liner dedication, e.g., "To my beloved family...".}
+%-----------------------------------------------------------------------------%
+% ACKNOWLEDGEMENTS -- included file should start with '\acknowledgements'
+%-----------------------------------------------------------------------------%
+
+\include{{./Acknowledgements/acknowledgements}}
+
+%-----------------------------------------------------------------------------%
+% FRONTMATTER -- ToC is required, LoT and LoF are required if you have any
+% tables or figures, respectively. List of Abbreviations and Symbols is 
+% optional.
+%-----------------------------------------------------------------------------%
+\setcounter{tocdepth}{3} % Include subsubsections in the ToC
+
+\tableofcontents % Automatically generated
+\listoftables	% If you have any tables, automatically generated
+\listoffigures	% If you have any figures, automatically generated
+%\include{{./Abbreviations/listofabbr}} % List of Abbreviations. Start file with '\abbreviations'
+
+
+%==============================================================================
+%-----------------------------------------------------------------------------%
+%
+% MAIN BODY OF PAPER
+%
+%
+%-----------------------------------------------------------------------------%
+\widowpenalty=10000 % Prevents widows (last line of a paragraph at the top of a page)
+\clubpenalty=10000  % Prevents orphans (first line of a paragraph at the bottom of a page)
+\raggedbottom       % Prevents LaTeX from forcing full-page justification
+
+\include{{./Chapter1/introduction}}
+\include{{./Chapter2/text}}
+\include{{./Chapter3/text}}
+\include{{./Conclusion/text}}
+%==============================================================================
+
+%-----------------------------------------------------------------------------%
+% BIBLIOGRAPHY -- uncomment \nocite{*} to include items in 'mybib.bib' file
+% that aren't cited in the text.  Change the style to match your
+% discipline's standards.  Of course, if your bibliography file isn't called
+% 'References.bib' you might want to change that here too :)
+%-----------------------------------------------------------------------------%
+%\nocite{*} - if you use this it will put EVERYTHING in your .bib file into the references even if you don't cite it in the text
+\bibliographystyle{./Bibliography/jasa} %Formats bibliography
+% \bibliographystyle{./Bibliography/mybibstyle}
+% \bibliographystyle{plain}
+
+%adds Bibliography to your table of contents
+\cleardoublepage
+\normalbaselines %Fixes spacing of bibliography
+\addcontentsline{toc}{chapter}{BIBLIOGRAPHY} %adds Bibliography to your table of contents
+\bibliography{./Bibliography/References} %your bibliography file - change the path if needed
+
+% \bibliography{./Bibliography/References} %your bibliography file - change the path if needed
+%-----------------------------------------------------------------------------%
+
+%-----------------------------------------------------------------------------%
+% APPENDICES -- OPTIONAL. These are just chapters enumerated by Appendix A,
+%                Appendix B, Appendix C...
+%-----------------------------------------------------------------------------%
+\appendix
+\include{{./AppendixA/text}} % Start with '\chapter{Title}'
+% \include{{./AppendixB/text}} % Start with '\chapter{Title}'
+%You can always add more appendices here if you want
+
+%-----------------------------------------------------------------------------
+% You're done :)
+% Original files by Michael Gratton, modified for Temple U by Nemanja Djuric, November 2013, and again modified by M. Erfan Mowlaei, December 2025.
+\end{document}
